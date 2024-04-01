@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블랙업 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7156c50ef7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+
+       body,html{
+         scroll-behavior: smooth;
+         font-family: 'Nanum Brush Script', cursive;
+         font-family: 'Nanum Pen Script', cursive;
+         font-family: 'Noto Sans KR', sans-serif;
+       }
+
+        #main {
+            transition: margin-left .5s;
+        } 
+        
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header{
+            width: 100%;
+            height: 55px;
+            position: relative;
+            display: flex;
+            background: white;
+            position: sticky;
+            z-index: 1;
+            top: 0;
+        }
+
+        .header > img{
+            width: 300px;
+            height: auto;
+            position: absolute;
+            left: 42%;
+            top: -100%;
+        }
+
+        .bc_header_sh{
+            left: 0;
+            position: absolute;
+            top: 25%;
+            font-size: 0.9em;
+        }
+
+        .bc_header_ul{
+            position: absolute;
+            right: 2%;
+            top: 25%;
+            display: flex;
+            font-size: 0.9em;
+
+        }
+
+        .bc_header_ul > li, .bc_header_icon > li{
+            margin-left: 10px;
+        }
+
+        .bc_header_icon{
+            position: absolute;
+            right: 0%;
+            top: 25%;
+            display: flex;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .tab_menu_swiper{
+            width: 100%;
+            background: white;
+            height: 70px;
+            position: fixed;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            scroll-behavior: smooth;
+            box-sizing: content-box;
+            top: 55px;
+        }
+
+        .tab_menu_box{
+            width: 220px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+        }
+
+        .swiper_main_slideshow{
+        top: 80px;
+        position: relative;
+        min-width: 480px;
+        height: 800px;
+        background: transparent;
+        cursor: pointer;
+        overflow: clip;
+       }
+       
+
+       .swiper_main_slideshow > img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+
+       }
+
+       .swiper_banner_slideshow {
+        position: relative;
+        height: 120px;
+        cursor: pointer;
+        overflow: hidden;
+        margin-top: 180px;
+       }
+
+       .swiper_banner_slideshow > img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        cursor: pointer;
+       }
+
+       .swiper_banner02_slideshow {
+        position: relative;
+        width: 1380px;
+        height: 530px;
+        cursor: pointer;
+        overflow: hidden;
+        margin-top: 180px;
+        margin-left: 130px;
+       }
+
+       .swiper_banner02_slideshow > img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1380px;
+        height: 530px;
+        cursor: pointer;
+       }
+
+       .banner02_right{
+        position: absolute;
+        right: 0;
+       }
+
+
+       .swiper_slide_Sec{
+        width: 1480px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 180px;
+        margin-left: 22px;
+       }
+
+       .swiper_slide_box > img{
+        width: 460px;
+        height: auto;
+        cursor: pointer;
+       }
+
+       .swiper_slide_box{
+        width: 360px;
+        text-align: center;
+       }
+
+       .slide_box_txt_top{
+        font-weight: 500;
+        font-size: 1.4em;
+        word-spacing: 5px;
+       }
+
+       .slide_box_txt_bottom{
+        font-size: 1.1em;
+       }
+
+       #swiper_hot_item_slideshow, #swiper_outer_item_slideshow,
+       #swiper_top_item_slideshow,#swiper_pants_item_slideshow,
+       #swiper_sk_item_slideshow {
+        cursor: pointer;
+        overflow: hidden;
+        margin-top: 180px;
+       }
+
+
+       .swiper_hot_item_ul,.swiper_outer_item_ul,
+       .swiper_top_item_ul, .swiper_pants_item_ul,
+       .swiper_sk_item_ul{
+        display: flex;
+       }
+
+       .swiper_hot_item_ul > li > img {
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        margin-right: 20px;
+       }
+
+       .swiper_outer_item_ul > li > img{
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        margin-right: 20px;
+       }
+
+       .swiper_top_item_ul > li > img{
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        margin-right: 20px;
+       }
+
+       .swiper_pants_item_ul > li > img{
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        margin-right: 20px;
+       }
+
+       .swiper_sk_item_ul > li > img{
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        margin-right: 20px;
+       }
+
+       .arrowbox{
+        display: flex;
+        position: relative;
+       }
+
+       .nextbtn,.outer_nextbtn,
+       .top_nextbtn,.pants_nextbtn,
+       .sk_nextbtn{
+        position: absolute;
+        right: 0;
+       }
+
+       .hot_nextbtn,.hot_prevbtn{
+        display: none;
+       }
+
+       #swiper_hot_item_slideshow01,#swiper_outer_slideshow01
+       ,#swiper_top_slideshow01,#swiper_pants_slideshow01
+       ,#swiper_sk_slideshow01,#basic_sec01{
+        border: 1px solid black;
+        width: 50px;
+        position: absolute;
+        opacity: 0;
+       }
+
+       #basic_sec{
+        width: 1100px;
+        height: 700px;
+        margin: 0 auto;
+        margin-top: 180px;
+        display: flex;
+       }
+
+       #basic_sec > img{
+        width: 520px;
+        height: auto;
+       }
+
+       h1{
+        font-size: 2.5em;
+        letter-spacing: 3px;
+       }
+
+       .basic_txt{
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        margin-top: 12%;
+        margin-left: 150px;
+       }
+
+       .basic_btn{
+        width: 200px;
+        height: 40px;
+        border: 1px solid black;
+        line-height: 40px;
+        margin-left: 24%;
+        margin-top: 10%;
+        cursor: pointer;
+       }
+
+       #bc_banner_content{
+        margin-top: 180px;
+        display: flex;
+        justify-content: space-between;
+       }
+
+       .inr_banner_content_box > img{
+        width: 520px;
+        height: auto;
+       }
+
+       .bannr_con_txt{
+        text-align: center;
+
+       }
+
+       .inr_banner_title{
+        font-size: 1.5em;
+        margin-bottom: -10px;
+        margin-top: 5px;
+       }
+
+       #eventindex{
+        background: #f0f0f0;
+        text-align: center;
+        margin-top: 180px;
+        height: 450px;
+       }
+
+       .event_inr{
+        width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+       }
+
+       .eventindex_title{
+        font-size: 1.8em;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        font-weight: 600;
+       }
+
+       .eventindex_txt{
+        margin: 0 auto;
+        margin-top: -15px;
+       }
+
+       .ios_img > img{
+        width: 125px;
+        height: 125px;
+       }
+
+       .android_img > img{
+        width: 125px;
+        height: 125px;
+       }
+
+
+       .eventindex_inr02{
+        width: 350px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+       }
+
+       .scroll_top{
+        width: 20px;
+        height: 20px;
+        right: 9%;
+        position: fixed;
+        cursor: pointer;
+       }
+
+       #shop_menus{
+        position: absolute;
+        z-index: 10;
+        background: white;
+        width: 300px;
+        height: 700px;
+        display: none;
+        overflow: hidden;
+       }
+
+       #shop_menus02{
+        position: absolute;
+        z-index: 10;
+        background: white;
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+        transition: 0.4s;
+        cursor: pointer;
+       }
+
+       #close_bar{
+        z-index: 999999;
+        width: 20px;
+        margin-top: 50px;
+        margin-left: 95%;
+        cursor: pointer;
+       }
+
+       .shop_top_mu{
+        margin-top: 90px;
+       }
+
+       .shop_top_mu > li{
+        margin-top: 2px
+       }
+
+       .shop_top_mu > li > a{
+        font-weight: 600;
+       }
+
+       .drop_down_mu,.shop_bottom_mu,.lb_dropdn,.insta{
+        margin-top: 60px;
+        cursor: pointer;
+       }
+
+       .drop_mu,.lb_drop_mu{
+        display: none;
+        font-size: 0.9em;
+        margin-top: 20px;
+       }
+
+       .shop_bottom_mu > li > a{
+        font-weight: 300;
+        font-size: 0.9em;
+       }
+
+       .serch_box{
+        position: absolute;
+        z-index: 999;
+        width: 500px;
+        height: 140px;
+        background: white;
+        right: 200px;
+        top: 60px;
+        border: 1px solid black;
+        display: none;
+       }
+
+       .serch_box > input{
+        width: 400px;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-left: 50px;
+        margin-top: 30px;
+        outline: none;
+       }
+
+       .serch_box > i{
+        margin-left: -20px;
+       }
+
+       .serch_box > p{
+        font-size: 0.9em;
+        margin-left: 50px;
+        font-weight: 300;
+       }
+
+       .search_cnt{
+        display: flex;
+        font-size: 0.7em;
+        margin-top: -7px;
+        margin-left: 50px;
+        font-weight: 300;
+        width: 380px;
+        justify-content: space-between;
+       }
+
+       .sh_close{
+        width: 5px;
+        height: 5px;
+        font-size: 0.9em;
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+       }
+       
+       .tab_menu_box > .hot > a.on, .tab_menu_box > .outer > a.on
+       , .tab_menu_box > .basic > a.on,.tab_menu_box > .top > a.on
+       ,.tab_menu_box > .pants > a.on,.tab_menu_box > .sk > a.on{
+        font-size: 1.2em;
+       }
+
+
+       
+
+       @media screen and (max-width: 768px){
+        body{
+            overflow-x: hidden;
+        }
+        #wrap{
+            width: 100%;
+        }
+
+        .header{
+            width: 100%;
+        }
+
+        .bc_header_ul,.bc_header_sh{
+            display: none;
+        }
+
+        .header > img{
+            margin-left: -300px;
+            margin-top: 25px;
+            width: 200px;
+        }
+
+        .tab_menu_swiper{
+            width: 100%;
+            margin-left: -8px;
+        }
+
+        .tab_menu_swiper > .tab_menu_box > a{
+            font-size: 0.9em;
+        }
+
+        .swiper_main_slideshow,.swiper_main_slidesho > img{
+            height: 480px;
+            margin-top: -30px;
+        }
+
+        .swiper_slide_Sec{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .swiper_slide_Sec > .swiper_slide_box > img{
+            width: 400px;
+            margin-left: 130px;
+        }
+
+        .swiper_slide_box > img{
+            width: 330px;
+            margin-left: 20px;
+        }
+
+        .slide_box_txt_bottom,.slide_box_txt_top{
+            margin-left: 270px;
+        }
+
+        .slide_box_txt_top,.slide_box_txt_bottom{
+            font-size: 1em;
+        }
+
+        .hot_nextbtn,.hot_prevbtn{
+            display: block;
+            position: absolute;
+        }
+
+        .hot_prevbtn{
+            left: 2px;
+        }
+
+        .hot_nextbtn{
+            right: 2px;
+        }
+
+        .swiper_hot_item_ul,.swiper_outer_item_ul
+        ,.swiper_top_item_ul,.swiper_pants_item_ul
+        ,.swiper_sk_item_ul{
+            width: 100%;
+        }
+
+        .swiper_hot_item_ul > li > img ,.swiper_outer_item_ul > li > img
+        ,.swiper_top_item_ul > li > img ,.swiper_pants_item_ul > li > img
+        ,.swiper_sk_item_ul > li > img{
+            width: 330px;
+        }
+
+        .arrowbox{
+            width: 100%;
+        }
+
+        .nextbtn,.outer_nextbtn
+        ,.top_nextbtn, .top_nextbtn,.pants_nextbtn ,.sk_nextbtn{
+            right: 12px;
+        }
+     
+        .outer_prevbtn , .prevbtn
+        ,.top_prevbtn,.pants_prevbtn
+        ,.sk_prevbtn{
+            left: 8px;
+        }
+
+        .bc_header_icon{
+            opacity: 1;
+            margin-right: 25px;
+        }
+
+        #basic_sec {
+           flex-direction: column;
+           height: auto;
+
+        }
+
+        #basic_sec,#basic_sec > img {
+           width: 100%;
+        }
+
+        .basic_txt{
+            margin-left: 21%;
+        }
+
+        .swiper_banner_slideshow,.swiper_banner_slideshow > img{
+            width: 100%;
+            height: 70px;
+
+        }
+
+        .swiper_banner02_slideshow, .swiper_banner02_slideshow > img{
+            width: 100%;
+            height: 310px;
+            margin-left: 6px;
+        }
+
+        #bc_banner_content{
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .inr_banner_content_box > img{
+            width: 100%;
+        }
+
+        .slide_box_txt_top > p , .slide_box_txt_bottom > p{
+            font-size: 1.8em;
+        }
+
+        #eventindex{
+            width: 100%;
+        }
+
+        .scroll_top{
+            right: 0;
+        }
+
+        .serch_box{
+            margin-right: -200px;
+            position: fixed;
+        }
+       }
+
+       @media screen and (max-width: 480px){
+        body{
+            overflow-x: hidden;
+        }
+        
+        #wrap{
+            width: 480px;
+        }
+
+        .header{
+            width: 480px;
+        }
+
+        .header > img{
+            margin-left: -41%;
+        }
+
+        .bc_header_icon{
+            margin-right: 60px;
+        }
+
+        .swiper_main_slideshow,.swiper_main_slideshow > img{
+            height: 320px;
+        }
+
+        .hot > a, .outer > a, .basic > a, .top > a
+        ,.pants > a, .sk > a{
+            font-size: 0.8em;
+        }
+
+        .tab_menu_box > .hot > a.on, .tab_menu_box > .outer > a.on
+       , .tab_menu_box > .basic > a.on,.tab_menu_box > .top > a.on
+       ,.tab_menu_box > .pants > a.on,.tab_menu_box > .sk > a.on{
+        font-size: 0.9em;
+       }
+
+        .swiper_hot_item_ul,.swiper_outer_item_ul
+        ,.swiper_top_item_ul,.swiper_pants_item_ul
+        ,.swiper_sk_item_ul{
+            width: 100%;
+        }
+
+        .swiper_hot_item_ul > li > img ,.swiper_outer_item_ul > li > img
+        ,.swiper_top_item_ul > li > img ,.swiper_pants_item_ul > li > img
+        ,.swiper_sk_item_ul > li > img{
+            width: 230px;
+        }
+
+        .swiper_slide_Sec{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .swiper_slide_Sec > .swiper_slide_box > img{
+            width: 300px;
+            margin-left: 70px;
+        }
+
+        .swiper_slide_box > img{
+            width: 330px;
+            margin-left: 20px;
+        }
+
+        .slide_box_txt_bottom,.slide_box_txt_top{
+            margin-left: 80px;
+        }
+
+        .swiper_slide_box > img{
+            width: 230px;
+            margin-left: 20px;
+        }
+
+        .slide_box_txt_top,.slide_box_txt_bottom{
+            font-size: 1em;
+        }
+
+        #arrowbox{
+            width: 100%;
+        }
+
+        .hot_nextbtn,.hot_prevbtn{
+            display: block;
+        }
+
+        .hot_prevbtn{
+            margin-left: 4px;
+        }
+
+        .hot_nextbtn{
+            margin-left: 400px;
+        }
+
+        .nextbtn,.outer_nextbtn
+        ,.top_nextbtn,.pants_nextbtn
+        ,.sk_nextbtn{
+            position: absolute;
+            right: 6px;
+        }
+        
+        .outer_prevbtn , .prevbtn
+        ,.top_prevbtn,.pants_prevbtn
+        ,.sk_prevbtn{
+            margin-left: 8px;
+        }
+
+        #basic_sec > img {
+           width: 480px;
+        }
+
+        .basic_txt{
+            margin-left: 1%;   
+       }
+ 
+       .swiper_banner_slideshow,.swiper_banner_slideshow > img{
+            width: 100%;
+            height: 40px;
+        }
+
+       .swiper_banner02_slideshow, .swiper_banner02_slideshow > img{
+            width: 100%;
+            height: 200px;
+        }
+
+        .inr_banner_content_box > img{
+            width: 100%;
+        }
+
+        .slide_box_txt_top > p , .slide_box_txt_bottom > p{
+            font-size: 1.8em;
+        }
+
+        #eventindex{
+            width: 100%;
+        }
+
+        .serch_box{
+            width: 400px;
+        }
+
+        .serch_box > input{
+            margin-left: 10px;
+            width: 370px;
+        }
+
+        .serch_box > p{
+            margin-left: 12px;
+        }
+
+        .search_cnt{
+            margin-left: 15px;
+        }
+    }
+
+
+
+       
+
+       
+
+    </style>
+    <script>
+         $(function () {
+          $(".swiper_main_slideshow,.swiper_banner_slideshow,.swiper_banner02_slideshow").each(function () {
+            let $slides = $(this).find("img"),
+              slideCount = $slides.length,
+              currentIndex = 0;
+  
+            $slides.eq(currentIndex).fadeIn();
+  
+            setInterval(showNextSlide, 5000);
+  
+            function showNextSlide() {
+              let nextIndex = (currentIndex + 1) % slideCount;
+              $slides.eq(currentIndex).fadeOut();
+              $slides.eq(nextIndex).fadeIn();
+  
+              currentIndex = nextIndex;
+            }
+          });
+        });
+
+        $( document ).ready( function() {
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 20 ) {
+            $( '.tab_menu_swiper' ).show();
+          } else {
+            $( '.tab_menu_swiper' ).hide();
+          }
+        });
+      });
+
+      $( document ).ready( function() {
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 20 ) {
+            $( '.scroll_top' ).fadeIn();
+          } else {
+            $( '.scroll_top' ).fadeOut();
+          }
+        });
+        $( '.scroll_top' ).click( function() {
+          $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+          return false;
+        });
+      });
+
+        $(function(){
+          $(".swiper_hot_item_ul > li:last").prependTo(".swiper_hot_item_ul");
+          $(".nextbtn").click(function(){
+            $(".swiper_hot_item_ul").animate({marginLeft:"-=400px"},800,function(){
+                $(".swiper_hot_item_ul li:first").stop().appendTo(".swiper_hot_item_ul");
+                $(".swiper_hot_item_ul").stop().css({"marginLeft":"-100px"});
+            });
+          });
+          $(".prevbtn").click(function(){
+            $(".swiper_hot_item_ul").animate({marginLeft:"+=400px"},800,function(){
+                $(".swiper_hot_item_ul li:last").stop().appendTo(".swiper_hot_item_ul");
+                $(".swiper_hot_item_ul").stop().css({"marginRight":"-1200px"});
+            });
+          });
+        });
+              
+        $(function(){
+          $(".swiper_outer_item_ul > li:last").prependTo(".swiper_outer_item_ul");
+          $(".outer_nextbtn").click(function(){
+            $(".swiper_outer_item_ul").animate({marginLeft:"-=400px"},800,function(){
+                $(".swiper_outer_item_ul li:first").stop().appendTo(".swiper_outer_item_ul");
+                $(".swiper_outer_item_ul").stop().css("marginLeft","-1200px");
+            });
+          });
+          $(".outer_prevbtn").click(function(){
+            $(".swiper_outer_item_ul").animate({marginLeft:"+=400px"},800,function(){
+                $(".swiper_outer_item_ul li:last").stop().appendTo(".swiper_outer_item_ul");
+                $(".swiper_outer_item_ul").stop().css("marginRight","-1200px");
+            });
+          });
+        });
+
+        $(function(){
+          $(".swiper_top_item_ul > li:last").prependTo(".swiper_top_item_ul");
+          $(".top_nextbtn").click(function(){
+            $(".swiper_top_item_ul").animate({marginLeft:"-=400px"},800,function(){
+                $(".swiper_top_item_ul li:first").stop().appendTo(".swiper_top_item_ul");
+                $(".swiper_top_item_ul").stop().css("marginLeft","-1200px");
+            });
+          });
+          $(".top_prevbtn").click(function(){
+            $(".swiper_top_item_ul").animate({marginLeft:"+=400px"},800,function(){
+                $(".swiper_top_item_ul li:last").stop().appendTo(".swiper_top_item_ul");
+                $(".swiper_top_item_ul").stop().css("marginRight","-1200px");
+            });
+          });
+        });
+
+        $(function(){
+          $(".swiper_pants_item_ul > li:last").prependTo(".swiper_pants_item_ul");
+          $(".pants_nextbtn").click(function(){
+            $(".swiper_pants_item_ul").animate({marginLeft:"-=400px"},800,function(){
+                $(".swiper_pants_item_ul li:first").stop().appendTo(".swiper_pants_item_ul");
+                $(".swiper_pants_item_ul").stop().css("marginLeft","-1200px");
+            });
+          });
+          $(".pants_prevbtn").click(function(){
+            $(".swiper_pants_item_ul").animate({marginLeft:"+=400px"},800,function(){
+                $(".swiper_pants_item_ul li:last").stop().appendTo(".swiper_pants_item_ul");
+                $(".swiper_pants_item_ul").stop().css("marginRight","-1200px");
+            });
+          });
+        });
+
+        $(function(){
+          $(".swiper_sk_item_ul > li:last").prependTo(".swiper_sk_item_ul");
+          $(".sk_nextbtn").click(function(){
+            $(".swiper_sk_item_ul").animate({marginLeft:"-=400px"},800,function(){
+                $(".swiper_sk_item_ul li:first").stop().appendTo(".swiper_sk_item_ul");
+                $(".swiper_sk_item_ul").stop().css("marginLeft","-1200px");
+            });
+          });
+          $(".sk_prevbtn").click(function(){
+            $(".swiper_sk_item_ul").animate({marginLeft:"+=400px"},800,function(){
+                $(".swiper_sk_item_ul li:last").stop().appendTo(".swiper_sk_item_ul");
+                $(".swiper_sk_item_ul").stop().css("marginRight","-1200px");
+            });
+          });
+        });
+
+        $(function(){
+            $(".drop_down_mu").click(function(){
+                $(".drop_mu").slideToggle()
+            });
+        });
+
+        $(function(){
+            $(".bc_header_search").click(function(){
+                $(".serch_box").show()
+            });
+        });
+
+        $(function(){
+            $(".sh_close").click(function(){
+                $(".serch_box").hide()
+            });
+        });
+
+        $(function(){
+            $(".lb_dropdn").click(function(){
+                $(".lb_drop_mu").slideToggle()
+            });
+        });
+
+        $(function(){
+      $(".bc_header_sh").on("mouseover",function(){
+        $("#shop_menus").stop().show();
+      });
+
+      $("#shop_menus").on("mouseover",function(){
+        $("#shop_menus").stop().show();
+      });
+
+      $("#shop_menus").on("mouseout",function(){
+        $("#shop_menus").stop().hide();
+      });
+    });
+
+    $(function(){       
+        $(".tab_menu_box > span > a").click(function(){
+            $(".tab_menu_box > span > a").removeClass("on");
+	        $(this).addClass("on");
+        });
+     });
+
+     $(function(){       
+        $("#wrap").mouseup(function(){
+            $(".tab_menu_box > span > a").removeClass("on");
+        });
+     });
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <span class="bc_header_sh"><a href="#">SHOP</a></span>
+        <img src="images2/blackup_loogoo.png" alt="">
+        <ul class="bc_header_ul">
+            <li class="bc_header_search"><a href="#">SEARCH</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#">BAG:0</a></li>
+        </ul>
+        <ul class="bc_header_icon">
+            <li class="bc_header_search"><i class="fa-solid fa-magnifying-glass"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+            <li><i onclick="openNav()" class="fa-solid fa-bars"></i></li>
+        </ul>
+    </div>
+    <div class="serch_box">
+        <div class="sh_close"><i class="fa-solid fa-x"></i></div>
+        <input type="text"><i class="fa-solid fa-magnifying-glass"></i>
+        <p>인기검색어</p>
+        <ul class="search_cnt">
+            <li>B-BASIC</li>
+            <li>오프숄더</li>
+            <li>가디건</li>
+            <li>슬랙스</li>
+            <li>니트</li>
+            <li>자켓</li>
+            <li>크롭</li>
+            <li>부츠컷</li>
+            <li>워싱</li>
+            <li>숏팬츠</li>
+        </ul>
+    </div>
+    <div id="shop_menus">
+        <ul class="shop_top_mu">
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">BLACKUP PROJECT</a></li>
+            <li><a href="#">오늘도착</a></li>
+        </ul>
+        <div class="drop_down_mu">SHOP<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="drop_mu">
+            <li><a href="#">인기상품재입고</a></li>
+            <li><a href="#">비베이직&비데님</a></li>
+            <li><a href="#">아우터</a></li>
+            <li><a href="#">니트웨어</a></li>
+            <li><a href="#">탑</a></li>
+            <li><a href="#">팬츠</a></li>
+            <li><a href="#">데님</a></li>
+            <li><a href="#">스커트&드레스</a></li>
+            <li><a href="#">백&슈즈</a></li>
+            <li><a href="#">주얼리</a></li>
+            <li><a href="#">액세사리</a></li>
+            <li><a href="#">유니섹스</a></li>
+        </ul>
+        <div class="lb_dropdn">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="lb_drop_mu">
+            <li><a href="#">F/W 2023 COLLECTION</a></li>
+            <li><a href="#">H/S 2023 COLLECTION</a></li>
+            <li><a href="#">S/S 2023 COLLECTION</a></li>
+            <li><a href="#">F/W 2023 COLLECTION</a></li>
+            <li><a href="#">S/S 2023 COLLECTION</a></li>
+        </ul>
+        <ul class="shop_bottom_mu">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">위시리스트</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">LANGUAGE</a></li>
+        </ul>
+        <div class="insta"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+
+    <div id="shop_menus02">
+        <div id="close_bar" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></div>
+        <ul class="shop_top_mu">
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">BLACKUP PROJECT</a></li>
+            <li><a href="#">오늘도착</a></li>
+        </ul>
+        <div class="drop_down_mu">SHOP<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="drop_mu">
+            <li><a href="#">인기상품재입고</a></li>
+            <li><a href="#">비베이직&비데님</a></li>
+            <li><a href="#">아우터</a></li>
+            <li><a href="#">니트웨어</a></li>
+            <li><a href="#">탑</a></li>
+            <li><a href="#">팬츠</a></li>
+            <li><a href="#">데님</a></li>
+            <li><a href="#">스커트&드레스</a></li>
+            <li><a href="#">백&슈즈</a></li>
+            <li><a href="#">주얼리</a></li>
+            <li><a href="#">액세사리</a></li>
+            <li><a href="#">유니섹스</a></li>
+        </ul>
+        <div class="lb_dropdn">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="lb_drop_mu">
+            <li><a href="#">F/W 2023 COLLECTION</a></li>
+            <li><a href="#">H/S 2023 COLLECTION</a></li>
+            <li><a href="#">S/S 2023 COLLECTION</a></li>
+            <li><a href="#">F/W 2023 COLLECTION</a></li>
+            <li><a href="#">S/S 2023 COLLECTION</a></li>
+        </ul>
+        <ul class="shop_bottom_mu">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">위시리스트</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">LANGUAGE</a></li>
+        </ul>
+        <div class="insta"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="tab_menu_swiper">
+        <div class="tab_menu_box"><span class="hot"><a href="#swiper_hot_item_slideshow01">인기아이템</a></span></div>
+        <div class="tab_menu_box"><span class="outer"><a href="#swiper_outer_item_slideshow01">OUTER</a></span></div>
+        <div class="tab_menu_box"><span class="basic"><a href="#basic_sec01">BASIC</a></span></div>
+        <div class="tab_menu_box"><span class="top"><a href="#swiper_top_item_slideshow01">TOP</a></span></div>
+        <div class="tab_menu_box"><span class="pants"><a href="#swiper_pants_item_slideshow01">PANTS</a></span></div>
+        <div class="tab_menu_box"><span class="sk"><a href="#swiper_sk_item_slideshow01">SK&OPS</a></span></div>
+    </div>
+    <div id="main">
+    <div id="swiper_main_section">
+        <div class="swiper_main_inner">
+            <div class="swiper_main_slideshow">
+                <img src="images2/blackup_main4.jpg" alt="">
+                <img src="images2/black_main_01.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="scroll_top"><i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <div class="swiper_slide_Sec">
+        <div class="swiper_slide_box">
+        <img src="images2/blackup_swiper_slide_01.jpg" alt="">
+        <p class="slide_box_txt_top">
+            OFF SHOULDER
+        </p>
+        <P class="slide_box_txt_bottom">
+            오프숄더 모아보기
+        </P>
+    </div>
+    <div class="swiper_slide_box">
+        <img src="images2/blackup_swiper_slide_02.jpg" alt="">
+        <p class="slide_box_txt_top">
+            HOODTEESHIRT
+        </p>
+        <P class="slide_box_txt_bottom">
+            추운겨울,몸을 녹여줄 후드티
+        </P>
+    </div>
+    <div class="swiper_slide_box">
+        <img src="images2/blackup_swiper_slide_03.jpg" alt="">
+        <p class="slide_box_txt_top">
+            JAKET
+        </p>
+        <P class="slide_box_txt_bottom">
+            자켓 몰아보기
+        </P>
+    </div>
+    </div>
+    <div id="swiper_hot_item_slideshow01"></div>
+       <div id="swiper_hot_item_slideshow">
+         <h3>최근 인기있는 상품</h3>
+            <ul class="swiper_hot_item_ul">
+                <li><img src="images2/blackup_hot_item01.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item02.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item03.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item04.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item05.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item06.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item01.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item02.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item03.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item04.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item05.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item06.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item01.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item02.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item03.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item04.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item05.gif" alt=""></li>
+                <li><img src="images2/blackup_hot_item06.gif" alt=""></li>
+            </ul>
+    </div>
+    <div class="arrowbox">
+        <div class="prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <div id="swiper_outer_item_slideshow01"></div>
+    <div id="swiper_outer_item_slideshow">
+        <h3>OUTER</h3>
+        <ul class="swiper_outer_item_ul">
+            <li><img src="images2/blackup_outer01.webp" alt=""></li>
+            <li><img src="images2/blackup_outer02.webp" alt=""></li>
+            <li><img src="images2/blackup_outer03.webp" alt=""></li>
+            <li><img src="images2/blackup_outer04.webp" alt=""></li>
+            <li><img src="images2/blackup_outer01.webp" alt=""></li>
+            <li><img src="images2/blackup_outer02.webp" alt=""></li>
+            <li><img src="images2/blackup_outer03.webp" alt=""></li>
+            <li><img src="images2/blackup_outer04.webp" alt=""></li>
+            <li><img src="images2/blackup_outer01.webp" alt=""></li>
+            <li><img src="images2/blackup_outer02.webp" alt=""></li>
+            <li><img src="images2/blackup_outer03.webp" alt=""></li>
+            <li><img src="images2/blackup_outer04.webp" alt=""></li>
+            <li><img src="images2/blackup_outer01.webp" alt=""></li>
+            <li><img src="images2/blackup_outer02.webp" alt=""></li>
+            <li><img src="images2/blackup_outer03.webp" alt=""></li>
+            <li><img src="images2/blackup_outer04.webp" alt=""></li>
+        </ul>
+    </div>
+    <div class="arrowbox">
+        <div class="outer_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="outer_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <div id="basic_sec01"></div>
+    <div id="basic_sec">
+        <img src="images2/blackup_basic.jpg" alt="">
+        <div class="basic_txt">
+            <h1>B-BASIC</h1>
+            <p>가장 실용적이고 기본이 돠는 아이템을 추구하는 B-BASIC
+                모든 체형을 아우르느 스탠다드한 사이즈를 기반으로
+                더 좋은 소재와 간결하고 필수적인 디테일에 집중했습니다.
+                과하지 않은 기본 디자인으로 스타일링에 대한 고민을 줄여드립니다.
+            </p>
+            <a href="포트폴리오_블랙업_서브 .html"><div class="basic_btn">비베이직 보러가기</div></a>
+        </div>
+    </div>
+    <div id="swiper_top_item_slideshow01"></div>
+    <div id="swiper_top_item_slideshow">
+        <h3>TOP</h3>
+        <ul class="swiper_top_item_ul">
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+            <li><img src="images2/blackup_top.webp" alt=""></li>
+            <li><img src="images2/blackup_top02.webp" alt=""></li>
+            <li><img src="images2/blackup_top03.webp" alt=""></li>
+            <li><img src="images2/blackup_top04.webp" alt=""></li>
+        </ul>
+    </div>
+    <div class="arrowbox">
+            <div class="top_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="top_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+    <div id="swiper_banner_section">
+        <div class="swiper_banner_inner">
+            <div class="swiper_banner_slideshow">
+                <img src="images2/blackup_banner01.jpg" alt="">
+                <img src="images2/blackup_banner02.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="swiper_pants_item_slideshow01"></div>
+    <div id="swiper_pants_item_slideshow">
+        <h3>PANTS</h3>
+        <ul class="swiper_pants_item_ul">
+            <li><img src="images2/blackup_pants01.gif" alt=""></li>
+            <li><img src="images2/blackup_pants02.gif" alt=""></li>
+            <li><img src="images2/blackup_pants03.gif" alt=""></li>
+            <li><img src="images2/blackup_pants04.gif" alt=""></li>
+            <li><img src="images2/blackup_pants01.gif" alt=""></li>
+            <li><img src="images2/blackup_pants02.gif" alt=""></li>
+            <li><img src="images2/blackup_pants03.gif" alt=""></li>
+            <li><img src="images2/blackup_pants04.gif" alt=""></li>
+            <li><img src="images2/blackup_pants01.gif" alt=""></li>
+            <li><img src="images2/blackup_pants02.gif" alt=""></li>
+            <li><img src="images2/blackup_pants03.gif" alt=""></li>
+            <li><img src="images2/blackup_pants04.gif" alt=""></li>
+            <li><img src="images2/blackup_pants01.gif" alt=""></li>
+            <li><img src="images2/blackup_pants02.gif" alt=""></li>
+            <li><img src="images2/blackup_pants03.gif" alt=""></li>
+            <li><img src="images2/blackup_pants04.gif" alt=""></li>
+            <li><img src="images2/blackup_pants01.gif" alt=""></li>
+            <li><img src="images2/blackup_pants02.gif" alt=""></li>
+            <li><img src="images2/blackup_pants03.gif" alt=""></li>
+            <li><img src="images2/blackup_pants04.gif" alt=""></li>
+        </ul>
+        
+    </div>
+    <div class="arrowbox">
+            <div class="pants_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="pants_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+    <div id="swiper_sk_item_slideshow01"></div>
+    <div id="swiper_sk_item_slideshow">
+        <h3>SK&OPS</h3>
+        <ul class="swiper_sk_item_ul">
+            <li><img src="images2/blackup_sk01.webp" alt=""></li>
+            <li><img src="images2/blackup_sk02.webp" alt=""></li>
+            <li><img src="images2/blackup_sk03.webp" alt=""></li>
+            <li><img src="images2/blackup_sk04.webp" alt=""></li>
+            <li><img src="images2/blackup_sk01.webp" alt=""></li>
+            <li><img src="images2/blackup_sk02.webp" alt=""></li>
+            <li><img src="images2/blackup_sk03.webp" alt=""></li>
+            <li><img src="images2/blackup_sk04.webp" alt=""></li>
+            <li><img src="images2/blackup_sk01.webp" alt=""></li>
+            <li><img src="images2/blackup_sk02.webp" alt=""></li>
+            <li><img src="images2/blackup_sk03.webp" alt=""></li>
+            <li><img src="images2/blackup_sk04.webp" alt=""></li>
+            <li><img src="images2/blackup_sk01.webp" alt=""></li>
+            <li><img src="images2/blackup_sk02.webp" alt=""></li>
+            <li><img src="images2/blackup_sk03.webp" alt=""></li>
+            <li><img src="images2/blackup_sk04.webp" alt=""></li>
+            <li><img src="images2/blackup_sk01.webp" alt=""></li>
+            <li><img src="images2/blackup_sk02.webp" alt=""></li>
+            <li><img src="images2/blackup_sk03.webp" alt=""></li>
+            <li><img src="images2/blackup_sk04.webp" alt=""></li>
+        </ul>
+        
+    </div>
+    <div class="arrowbox">
+            <div class="sk_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="sk_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+    <div class="swiper_banner02_section">
+        <div class="swiper_banner02_inner">
+            <div class="swiper_banner02_slideshow">
+                <img src="images2/blackup_banner03.jpg" alt="">
+                <img src="images2/blackup_banner04.jpg" alt="">
+                <img src="images2/blackup_banner05.jpg" alt="">
+                <img src="images2/blackup_banner06.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="bc_banner_content">
+        <div class="inr_banner_content_box">
+        <img src="images2/blackup_banner_img1.jpg" alt="">
+        <div class="bannr_con_txt">
+            <p class="inr_banner_title">MUSTANG JUMPER</p>
+            <P>매서운 칼바람에도 끄떡없는</P>
+        </div>
+    </div>
+    <div class="inr_banner_content_box">
+        <img src="images2/blackup_banner_img2.jpg" alt="">
+        <div class="bannr_con_txt">
+            <p class="inr_banner_title">WARM&COZY</p>
+            <P>포근한 니트 아이템</P>
+        </div>
+    </div>
+        <div class="inr_banner_content_box">
+        <img src="images2/blackup_banner_img3.jpg" alt="">
+        <div class="bannr_con_txt">
+            <p class="inr_banner_title">MUFFLER AND GLOVES</p>
+            <P>따분한 겨울룩에 활기를</P>
+        </div>
+    </div>
+    </div>
+    <div id="eventindex">
+        <div class="event_inr">
+        <p class="eventindex_title">APP DOWNLOAD</p>
+        <P>블랙업 어플리케이션 다운로드시,</p>
+        <P class="eventindex_txt">매달 새롭게 발급되는 할인 쿠폰팩과 다양한 이벤트 소식을 받아 보실 수 있습니다.</p>
+            <div class="eventindex_inr02">
+            <div class="ios_img">
+                <img src="images2/blackup_ios_img.png" alt="">
+                <P>
+                    IOS
+                </P>
+            </div>
+            <div class="android_img">
+                <img src="images2/blackup_ios_img.png" alt="">
+                <P>
+                    ANDROID
+                </P>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+      function openNav() {
+            document.getElementById("shop_menus02").style.width = " 100% "
+        }
+
+      function closeNav(){
+            document.getElementById("shop_menus02").style.width = " 0 "
+        }
+</script>
+</body>
+</html>
